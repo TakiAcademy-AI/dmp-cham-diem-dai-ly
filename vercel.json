@@ -3,7 +3,11 @@
   "services": {
     "app": {
       "root": ".",
-      "runtime": "container"
+      "runtime": "container",
+      "entrypoint": "Dockerfile"
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": { "service": "app" } }
+  ]
 }
