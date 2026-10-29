@@ -1,0 +1,22 @@
+.m02-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.m02-name { font-size: 20px; line-height: 28px; font-weight: 700; margin: 0; }
+.m02-card { text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.m02-pending { align-self: flex-start; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--pending); background: var(--pending-soft); border-radius: var(--radius-sm); padding: 4px 8px; }
+.m02-label { font-size: 14px; font-weight: 500; color: var(--ink-muted); display: flex; align-items: center; gap: 6px; }
+.m02-warn { display: flex; gap: 8px; align-items: flex-start; background: var(--warning-soft); color: var(--warning); border-radius: var(--radius-lg); padding: 12px; font-size: 14px; line-height: 20px; font-weight: 500; border: 0; font-family: inherit; text-align: left; }
+.m02-warn--danger { background: var(--danger-soft); color: var(--danger); cursor: pointer; }
+.m02-quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.m02-quick button, .m02-quick a { min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; }
+.m02-quick .dmp-icon { color: var(--primary); }
+.m02-banner { background: var(--accent); color: var(--on-fill); border-radius: var(--radius-lg); padding: 16px; }
+.m02-banner b { display: block; font-size: 17px; line-height: 24px; }
+.m02-banner span { font-size: 14px; }
+.m02-bar { height: 8px; border-radius: 4px; background: var(--surface-muted); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.m02-bar > div { height: 100%; background: var(--success); }
+.m02-rk { font-size: 14px; color: var(--ink-muted); }
+.m02-rk b { color: var(--ink); }
+.m02-quick--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.m02-quick--2 button { min-height: 64px; flex-direction: row; justify-content: flex-start; gap: 10px; padding: 10px 12px; text-align: left; }
+.m02-quick--2 button > span { display: flex; flex-direction: column; min-width: 0; line-height: 20px; }
+.m02-quick--2 small { font-size: 12px; line-height: 16px; font-weight: 400; color: var(--ink-muted); }
+.m02-quick--2 .dmp-icon { flex: none; }

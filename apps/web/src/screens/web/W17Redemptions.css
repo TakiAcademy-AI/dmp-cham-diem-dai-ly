@@ -1,0 +1,27 @@
+.w17-kb { display: grid; grid-template-columns: repeat(5, minmax(196px, 1fr)); gap: 12px; overflow-x: auto; align-items: start; padding-bottom: 4px; }
+.w17-col { background: var(--surface-muted); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 10px; display: flex; flex-direction: column; gap: 10px; min-height: 420px; }
+.w17-col__h { display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 2px 4px; }
+.w17-col__h > span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-muted); font-weight: 600; }
+.w17-mine { white-space: nowrap; color: var(--primary); background: var(--primary-soft); border-radius: var(--radius-sm); padding: 1px 6px; font-weight: 600; }
+.w17-col__hint { font-size: 12px; color: var(--ink-muted); padding: 0 4px; }
+.w17-col__empty { font-size: 13px; color: var(--ink-muted); text-align: center; padding: 24px 0; }
+.w17-rc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 10px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; cursor: pointer; text-align: left; }
+.w17-rc:hover { border-color: var(--line-strong); }
+.w17-rc:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.w17-rc b { font-size: 14px; }
+.w17-rc__g { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+.w17-note { color: var(--warning); }
+.w17-acts { flex-wrap: wrap; gap: 6px; }
+.w17-table .dmp-table td { white-space: nowrap; }
+.w17-detail { display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
+.w17-print { font-size: 13px; line-height: 20px; display: flex; flex-direction: column; gap: 12px; }
+.w17-print__t { text-align: center; font-weight: 700; font-size: 16px; }
+.w17-print table { width: 100%; border-collapse: collapse; }
+.w17-print td, .w17-print th { border: 1px solid var(--line-strong); padding: 6px 8px; text-align: left; }
+.w17-sign { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 12px; margin-top: 8px; }
+.w17-sign div { height: 70px; }
+@container shell (max-width: 640px) {
+  .w17-kb { grid-template-columns: repeat(5, 82%); scroll-snap-type: x mandatory; }
+  .w17-col { scroll-snap-align: start; min-height: 0; }
+  .w17-acts .dmp-btn { min-height: 44px; }
+}

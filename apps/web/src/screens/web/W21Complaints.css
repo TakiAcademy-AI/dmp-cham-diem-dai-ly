@@ -1,0 +1,23 @@
+.w21-sel { color: var(--primary); }
+.w21-tx { white-space: normal; min-width: 160px; max-width: 260px; }
+.w21-detail { scroll-margin-top: 12px; }
+.w21-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--ink-muted); }
+.w21-meta > span { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.w21-thread { display: flex; flex-direction: column; gap: 10px; }
+.w21-msg { max-width: 88%; padding: 10px 12px; border-radius: 12px; font-size: 14px; line-height: 20px; white-space: pre-wrap; word-break: break-word; }
+.w21-msg--in { background: var(--surface-muted); align-self: flex-start; border-bottom-left-radius: 4px; }
+.w21-msg--out { background: var(--primary-soft); align-self: flex-end; border-bottom-right-radius: 4px; }
+.w21-msg > span { display: block; font-size: 11px; color: var(--ink-muted); margin-top: 4px; white-space: normal; }
+.w21-files { display: flex !important; flex-wrap: wrap; gap: 12px; font-size: 13px !important; }
+.w21-files a { display: inline-flex; align-items: center; gap: 4px; }
+.w21-lbl { margin-bottom: 6px; }
+.w21-ledger { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.w21-ledger .dmp-table td { white-space: nowrap; }
+.w21-ledger .dmp-table td.w21-item { white-space: normal; min-width: 200px; }
+.w21-act { padding-top: 12px; border-top: 1px solid var(--line); }
+
+@container shell (max-width: 640px) {
+  .w21-tx { min-width: 0; max-width: none; }
+  .w21-msg { max-width: 100%; }
+  .w21-btns .dmp-btn { flex: 1; min-height: 44px; }
+}

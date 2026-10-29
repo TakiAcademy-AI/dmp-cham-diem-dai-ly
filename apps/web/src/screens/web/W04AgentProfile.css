@@ -1,0 +1,39 @@
+.w04-ph { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.w04-ph__name { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.w04-ph__name h2 { margin: 0; font-size: 22px; line-height: 30px; font-weight: 700; }
+.w04-ph__meta { font-size: 14px; color: var(--ink-muted); }
+.w04-ph__pts { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.w04-label { font-size: 13px; color: var(--ink-muted); font-weight: 500; margin-bottom: 4px; }
+.w04-big { font-size: 28px; line-height: 36px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.w04-big--primary { color: var(--primary); }
+.w04-pending { font-size: 13px; color: var(--pending); font-weight: 600; }
+.w04-a { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.w04-small { font-size: 13px; display: block; margin-top: 2px; }
+.w04-bad { color: var(--danger); }
+.w04-mid { color: var(--warning); }
+
+.w04-tabwrap { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); min-width: 0; }
+.w04-tabwrap > .dmp-tabs { padding: 0 8px; overflow-x: auto; }
+.w04-tabbody { padding: 20px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.w04-docs { display: flex; gap: 12px; flex-wrap: wrap; }
+.w04-doc { width: 150px; height: 100px; border-radius: var(--radius-md); background: var(--surface-muted); border: 1px dashed var(--line-strong); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: var(--ink-muted); text-align: center; padding: 6px; box-sizing: border-box; }
+.w04-hist { list-style: none; margin: 0; padding: 0; }
+.w04-hist li { display: grid; grid-template-columns: 140px 220px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.w04-form { display: flex; flex-direction: column; gap: 14px; }
+
+@container shell (max-width: 640px) {
+  .w04-ph { grid-template-columns: minmax(0, 1fr); }
+  .w04-hist li { grid-template-columns: 1fr; gap: 2px; }
+  .w04-doc { width: calc(50% - 6px); }
+  .w04-tabbody { padding: 14px; }
+  .w04-big { font-size: 24px; line-height: 32px; }
+}
+.w04-locked { align-items: flex-start; }
+.w04-mt { margin-top: 8px; }
+.w04-doc { position: relative; height: auto; min-height: 120px; }
+.w04-doc.has-file { border-style: solid; border-color: var(--line); background: var(--surface); }
+.w04-doc__file { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--ink); text-decoration: none; width: 100%; }
+.w04-doc__file:hover span { color: var(--primary); text-decoration: underline; }
+.w04-doc__img { width: 100%; height: 72px; object-fit: cover; border-radius: var(--radius-sm); background: var(--surface-muted); }
+.w04-doc__icon { height: 72px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+.w04-doc__act { font-size: 13px; min-height: 32px; }

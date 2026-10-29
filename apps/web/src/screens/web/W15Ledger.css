@@ -1,0 +1,13 @@
+.w15-bar { flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.w15-periods { display: flex; gap: 8px; flex-wrap: wrap; }
+.w15-per { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: var(--radius-md); border: 1px solid var(--line-strong); background: var(--surface); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--ink); }
+.w15-per.is-on { background: var(--primary); border-color: var(--primary); color: var(--on-fill); }
+.w15-per.is-locked:not(.is-on) { color: var(--ink-muted); }
+.w15-pstate { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.w15-total { margin-left: auto; padding-bottom: 8px; }
+.w15-wrap { white-space: normal; display: inline-block; min-width: 160px; }
+.w15-by { min-width: 140px; font-size: 13px; }
+.w15-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.w15-table .dmp-table td { white-space: nowrap; }
+.w15-table .dmp-table td .w15-wrap { white-space: normal; }
+@container shell (max-width: 640px) { .w15-table .dmp-table td { white-space: normal; } .w15-wrap { min-width: 0; } }

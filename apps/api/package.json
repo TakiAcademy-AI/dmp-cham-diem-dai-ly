@@ -1,0 +1,40 @@
+{
+  "name": "@dmp/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json && concurrently -k -n tsc,node \"tsc -p tsconfig.build.json -w --preserveWatchOutput\" \"node --watch-path=dist --enable-source-maps dist/main.js\"",
+    "start": "node --enable-source-maps dist/main.js",
+    "seed": "node dist/db/seed-cli.js",
+    "test": "tsc -p tsconfig.build.json && vitest run",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@dmp/shared": "0.1.0",
+    "@electric-sql/pglite": "^0.3.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/serve-static": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "drizzle-orm": "^0.44.0",
+    "exceljs": "^4.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "concurrently": "^9.1.0",
+    "drizzle-kit": "^0.31.0",
+    "vitest": "^3.0.0"
+  }
+}

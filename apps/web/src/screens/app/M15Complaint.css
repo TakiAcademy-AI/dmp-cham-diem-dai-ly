@@ -1,0 +1,23 @@
+.m15-h { font-size: 17px; line-height: 24px; }
+.m15-sub { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m15-txs { display: flex; flex-direction: column; gap: 8px; }
+.m15-tx { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--surface); font: inherit; text-align: left; cursor: pointer; color: var(--ink); min-height: 64px; }
+.m15-tx.is-on { border-color: var(--primary); background: var(--primary-soft); box-shadow: inset 0 0 0 1px var(--primary); }
+.m15-tx__m { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.m15-tx__t { font-size: 16px; line-height: 22px; font-weight: 600; }
+.m15-tx small { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m15-tx em { font-style: normal; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--warning); }
+.m15-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.m15-ph { position: relative; aspect-ratio: 1; border-radius: var(--radius-md); background: var(--surface-muted); border: 1px solid var(--line); overflow: hidden; display: block; }
+.m15-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.m15-ph__x { position: absolute; top: 2px; right: 2px; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; padding: 0; }
+.m15-ph__x .dmp-icon { background: var(--surface); color: var(--ink); border-radius: 50%; padding: 4px; box-sizing: content-box; box-shadow: var(--shadow-raised); }
+.m15-item { padding: 0; gap: 0; overflow: hidden; }
+.m15-item__head { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px; border: 0; background: none; font: inherit; color: var(--ink); text-align: left; cursor: pointer; min-height: 64px; }
+.m15-item__m { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.m15-item__m b { font-size: 16px; line-height: 22px; }
+.m15-item__m span { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m15-due { display: flex; align-items: center; gap: 6px; margin: 0 12px 12px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--pending); }
+.m15-due.is-late { color: var(--danger); }
+.m15-item__body { display: flex; flex-direction: column; gap: 10px; padding: 12px; border-top: 1px solid var(--line); }
+.m15-claim { font-size: 15px; line-height: 22px; background: var(--surface-muted); border-radius: var(--radius-md); padding: 8px 10px; }

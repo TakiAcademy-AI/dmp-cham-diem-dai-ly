@@ -1,0 +1,15 @@
+.m08-tot { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.m08-tot div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 10px; display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.m08-tot b { font-size: 17px; line-height: 24px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.m08-tot .is-od b { color: var(--danger); }
+.m08-inv { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.m08-inv:last-child { border-bottom: 0; }
+.m08-inv b { font-variant-numeric: tabular-nums; }
+.m08-r { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.m08-lim { height: 10px; border-radius: 5px; background: var(--surface-muted); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.m08-lim > div { height: 100%; background: var(--primary); }
+.m08-l { font-size: 14px; }
+.m08-s { font-size: 13px; line-height: 18px; }
+.m08-alert { font-size: 15px; line-height: 22px; font-weight: 600; }
+.m08-call { text-decoration: none; }
+.m08-paid { color: var(--success); }

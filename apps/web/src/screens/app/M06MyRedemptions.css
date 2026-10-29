@@ -1,0 +1,7 @@
+.m06-rq { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.m06-rq__h { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+.m06-rq__h b { font-size: 17px; line-height: 24px; }
+.m06-meta { font-size: 14px; }
+.m06-note { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m06-hint { font-size: 13px; line-height: 18px; }
+.m06-title { font-size: 19px; line-height: 26px; }

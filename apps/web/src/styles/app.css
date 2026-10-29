@@ -1,0 +1,24 @@
+/* Chuyển khung trình diễn (shell.css) thành bố cục ứng dụng thật: toàn màn hình, cuộn trong vùng nội dung. */
+html, body, #root { height: 100%; }
+.demo-shell { height: 100vh; height: 100dvh; }
+.demo-toasts { position: fixed; }
+.demo-subnav { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.app-loading { display: grid; place-items: center; min-height: 240px; color: var(--ink-muted); font-size: 14px; }
+.app-error { display: flex; gap: var(--space-2); align-items: flex-start; padding: var(--space-3); border-radius: var(--radius-md); background: var(--danger-soft); color: var(--danger); font-size: 14px; }
+.app-demo-bar { display: flex; align-items: center; gap: var(--space-2); }
+.app-demo-bar select { height: 36px; border-radius: var(--radius-md); border: 1px solid var(--line-strong); padding: 0 8px; font: inherit; font-size: 14px; background: var(--surface); color: var(--ink); }
+
+/* App đại lý: trên điện thoại chiếm toàn màn hình; trên máy tính hiện trong khung 390px để trình diễn */
+.demo-phonewrap { min-height: 100vh; min-height: 100dvh; }
+@media (max-width: 520px) {
+  .demo-phonewrap { padding: 0; }
+  .demo-phoneside { display: none; }
+  .demo-phone { width: 100%; height: 100vh; height: 100dvh; border: 0; border-radius: 0; }
+  .demo-status { display: none; }
+}
+
+/* Vùng nội dung là flex cột: con trực tiếp (Tabs line, bảng…) không được co lại */
+.demo-content > * { flex-shrink: 0; }
+/* shell.css khai báo luật mobile của .demo-grid--4 trước luật gốc → đặt lại sau cùng */
+@container shell (max-width: 640px) { .demo-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container shell (max-width: 640px) { .app-demo-bar .demo-muted { display: none; } .dmp-topbar { flex-wrap: wrap; } }

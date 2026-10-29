@@ -1,0 +1,17 @@
+.w14-cats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.w14-cat { text-align: left; border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--surface); padding: 14px; font: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 4px; color: var(--ink); }
+.w14-cat:hover:not(:disabled) { background: var(--surface-muted); }
+.w14-cat:disabled { cursor: not-allowed; opacity: 0.6; }
+.w14-cat.is-on { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); background: var(--primary-soft); }
+.w14-cat b { font-size: 15px; }
+.w14-cat span { font-size: 13px; color: var(--ink-muted); }
+.w14-cat strong { font-size: 18px; color: var(--primary); }
+.w14-tabs { overflow-x: auto; }
+.w14-drop { border: 2px dashed var(--line-strong); border-radius: var(--radius-lg); padding: 20px; text-align: center; color: var(--ink-muted); font-size: 14px; display: flex; flex-direction: column; align-items: center; gap: 8px; background: var(--surface); }
+.w14-drop .dmp-field { width: 100%; max-width: 520px; text-align: left; }
+.w14-file { position: relative; cursor: pointer; justify-content: center; }
+.w14-file.is-done { background: var(--success-soft); color: var(--success); border-color: var(--success); }
+.w14-hidden { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.w14-sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.w14-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+@container shell (max-width: 900px) { .w14-cats, .w14-sum { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

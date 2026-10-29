@@ -1,0 +1,9 @@
+.w08-src { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; padding: 2px 6px; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-muted); }
+.w08-lines { width: 100%; border-collapse: collapse; font-size: 14px; }
+.w08-lines th { text-align: left; font-size: 12px; color: var(--ink-muted); font-weight: 600; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.w08-lines td { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.w08-lines .r { text-align: right; font-variant-numeric: tabular-nums; padding-left: 14px; white-space: nowrap; }
+.w08-od { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 24px; }
+.w08-sync { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-muted); }
+.dmp-dialog:has(.w08-od) { width: min(920px, 100%); }
+@media (max-width: 900px) { .w08-od { grid-template-columns: 1fr; } }

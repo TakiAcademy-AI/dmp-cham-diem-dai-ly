@@ -1,0 +1,13 @@
+.w09-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: var(--space-4); align-items: start; margin-top: var(--space-3); }
+.w09-table .dmp-table td { white-space: nowrap; }
+.w09-on { color: var(--primary); }
+.w09-entry { display: grid; grid-template-columns: 110px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14px; }
+.w09-bal { display: flex; align-items: center; gap: 10px; font-size: 15px; flex-wrap: wrap; }
+.w09-arrow { color: var(--ink-muted); }
+.w09-form { display: flex; flex-direction: column; gap: 14px; }
+.w09-pct { display: flex; flex-direction: column; gap: 6px; }
+.w09-pct__row { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 12px; align-items: center; }
+.w09-pct__row input[type="range"] { width: 100%; accent-color: var(--primary); }
+.w09-preview { padding: 12px; border-radius: var(--radius-md); background: var(--surface-muted); box-shadow: inset 0 0 0 1px var(--line); }
+.dmp-dialog:has(.w09-form) { width: min(640px, 100%); }
+@container shell (max-width: 1000px) { .w09-layout { grid-template-columns: minmax(0, 1fr); } }

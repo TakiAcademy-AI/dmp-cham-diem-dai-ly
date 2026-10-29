@@ -1,0 +1,11 @@
+{
+  "name": "DMP Việt Pháp – Đại lý",
+  "short_name": "DMP Đại lý",
+  "start_url": "/app",
+  "scope": "/app",
+  "display": "standalone",
+  "background_color": "#F5F7FA",
+  "theme_color": "#0B5394",
+  "lang": "vi",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

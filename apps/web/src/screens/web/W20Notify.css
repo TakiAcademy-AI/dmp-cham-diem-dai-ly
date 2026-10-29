@@ -1,0 +1,17 @@
+.w20-compose { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+.w20-lbl { margin-bottom: 6px; }
+.w20-tiers { display: flex; flex-wrap: wrap; gap: 8px; }
+.w20-tiers label { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; min-height: 32px; }
+.w20-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.w20-vars { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; padding: 12px; border-radius: var(--radius-md); background: var(--surface-muted); }
+.w20-count { color: var(--ink); }
+.w20-zalo { background: var(--surface-muted); border-radius: 18px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.w20-bubble { background: var(--surface); border: 1px solid var(--line); border-radius: 14px 14px 14px 4px; padding: 12px; font-size: 14px; line-height: 21px; }
+.w20-bubble b { display: block; font-size: 12px; color: var(--ink-muted); margin-bottom: 4px; }
+.w20-var { background: var(--primary-soft); color: var(--primary); border-radius: 4px; padding: 0 3px; font-weight: 600; }
+.w20-out .dmp-table td { white-space: nowrap; }
+.w20-by { display: inline-flex; align-items: center; gap: 4px; }
+@media (max-width: 900px) { .w20-compose { grid-template-columns: 1fr; } .w20-two { grid-template-columns: 1fr; } }
+.w20-clip { max-width: 360px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.w20-out .dmp-table td.is-primary { white-space: normal; min-width: 220px; }
+.w20-fail { color: var(--danger); font-weight: 600; }

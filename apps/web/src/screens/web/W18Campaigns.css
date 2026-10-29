@@ -1,0 +1,42 @@
+.w18-tlwrap { display: flex; flex-direction: column; gap: 4px; }
+.w18-tlrow { all: unset; display: flex; flex-direction: column; gap: 4px; padding: 4px 0 6px; cursor: pointer; border-radius: var(--radius-md); }
+.w18-tlrow:focus-visible { outline: 2px solid var(--focus-ring); }
+.w18-tlrow.is-on .w18-tlname { color: var(--primary); }
+.w18-tlname { font-size: 13px; min-width: 0; }
+.w18-tl { position: relative; display: block; height: 34px; background: var(--surface-muted); border-radius: var(--radius-md); box-shadow: inset 0 0 0 1px var(--line); }
+.w18-tlbar { position: absolute; top: 5px; bottom: 5px; border-radius: 4px; }
+.w18-tlbar--run { background: var(--primary); }
+.w18-tlbar--wait { background: var(--primary); opacity: 0.55; }
+.w18-tlbar--draft { background: var(--line-strong); }
+.w18-tlbar--end { background: var(--ink-muted); opacity: 0.45; }
+.w18-today { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--danger); opacity: 0.7; }
+.w18-tlm { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-muted); margin-top: 4px; }
+.w18-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; }
+.w18-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.w18-legend i { display: inline-block; width: 14px; height: 10px; border-radius: 3px; }
+.w18-legend i.w18-today-k { width: 2px; height: 12px; background: var(--danger); border-radius: 0; }
+
+.w18-namecell { white-space: normal; min-width: 220px; max-width: 420px; }
+.w18-sel { color: var(--primary); }
+.w18-over { color: var(--danger); }
+.w18-detail { scroll-margin-top: 12px; }
+
+.w18-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.w18-lbl { margin-bottom: 6px; }
+.w18-chk { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.w18-chk label { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer; min-height: 32px; }
+.w18-skurow { display: flex; align-items: flex-end; gap: 8px; }
+.w18-skurow .dmp-field { flex: 1; min-width: 0; }
+.w18-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.w18-tag { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: 13px; font-weight: 600; }
+.w18-tag:focus-visible { outline: 2px solid var(--focus-ring); }
+.w18-budget { display: flex; flex-direction: column; gap: 8px; }
+.w18-reject { padding: 12px; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.w18-acts:empty { display: none; }
+
+@container shell (max-width: 640px) {
+  .w18-two { grid-template-columns: minmax(0, 1fr); }
+  .w18-namecell { min-width: 0; max-width: none; }
+  .w18-chk label { min-height: 44px; }
+  .w18-acts .dmp-btn { flex: 1; }
+}

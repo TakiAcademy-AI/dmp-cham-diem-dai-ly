@@ -1,0 +1,29 @@
+.m12-h { font-size: 17px; line-height: 24px; }
+.m12-cats { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.m12-cat { display: flex; align-items: center; gap: 12px; text-align: left; border: 1px solid var(--line-strong); border-radius: var(--radius-lg); background: var(--surface); padding: 12px; font: inherit; color: var(--ink); cursor: pointer; min-height: 68px; }
+.m12-cat.is-on { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); background: var(--primary-soft); }
+.m12-cat.is-full:not(.is-on) { opacity: .7; }
+.m12-cat__ic { width: 44px; height: 44px; border-radius: 50%; background: var(--primary-soft); color: var(--primary); display: grid; place-items: center; flex: none; }
+.m12-cat.is-on .m12-cat__ic { background: var(--surface); }
+.m12-cat__m { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.m12-cat__m b { font-size: 16px; line-height: 22px; }
+.m12-cat__m span { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m12-cat__m em { font-style: normal; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--warning); }
+.m12-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.m12-ph { position: relative; aspect-ratio: 1; border-radius: var(--radius-md); background: var(--surface-muted); border: 1px solid var(--line); overflow: hidden; display: grid; place-items: center; color: var(--ink-muted); font-size: 13px; }
+.m12-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.m12-ph--add { border: 2px dashed var(--line-strong); background: var(--surface); cursor: pointer; font: inherit; font-size: 14px; font-weight: 600; color: var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.m12-ph--wait { font-size: 13px; }
+.m12-ph__x { position: absolute; top: 2px; right: 2px; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; padding: 0; }
+.m12-ph__x .dmp-icon { background: var(--surface); color: var(--ink); border-radius: 50%; padding: 4px; box-sizing: content-box; box-shadow: var(--shadow-raised); }
+.m12-cap { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m12-kit { min-height: 44px; min-width: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 0; background: none; color: var(--primary); font: inherit; font-size: 12px; line-height: 14px; font-weight: 600; cursor: pointer; padding: 0 4px; }
+.m12-item { padding: 0; gap: 0; overflow: hidden; }
+.m12-item__head { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px; border: 0; background: none; font: inherit; color: var(--ink); text-align: left; cursor: pointer; min-height: 64px; }
+.m12-item__m { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.m12-item__m b { font-size: 16px; line-height: 22px; }
+.m12-item__m span { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m12-item__r { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.m12-item__body { display: flex; flex-direction: column; gap: 10px; padding: 0 12px 12px; border-top: 1px solid var(--line); padding-top: 12px; }
+.m12-linkout { display: flex; align-items: center; gap: 6px; font-size: 14px; word-break: break-all; min-height: 44px; }
+.m12-note { font-size: 15px; line-height: 22px; color: var(--ink); background: var(--surface-muted); border-radius: var(--radius-md); padding: 8px 10px; }

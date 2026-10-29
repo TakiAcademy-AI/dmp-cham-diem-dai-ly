@@ -1,0 +1,28 @@
+# Chạy thử production cục bộ: docker compose up --build → http://localhost:3000
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: dmp
+      POSTGRES_USER: dmp
+      POSTGRES_PASSWORD: dmp
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dmp"]
+      interval: 3s
+      retries: 20
+  app:
+    build: .
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgres://dmp:dmp@db:5432/dmp
+      JWT_SECRET: ${JWT_SECRET:-doi-chuoi-bi-mat-nay}
+      DEMO_MODE: ${DEMO_MODE:-true}
+      UPLOAD_DIR: /data/uploads
+    env_file: [{ path: .env, required: false }]
+    volumes: [uploads:/data/uploads]
+    ports: ["3000:3000"]
+volumes:
+  pgdata:
+  uploads:

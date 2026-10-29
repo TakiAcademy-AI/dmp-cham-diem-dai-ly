@@ -1,0 +1,42 @@
+import type { RuleParams } from './types';
+
+/** Tham số mặc định lấy theo khảo sát của khách — [CHỜ CHỐT], chỉ là bộ v1 Nháp để demo. */
+export const DEFAULT_PARAMS: RuleParams = {
+  vndPerPoint: 100000,
+  pointValueVND: 1000,
+  vatRate: 0.1,
+  milestoneOrderVND: 20000000,
+  milestoneBonus: 200,
+  minOrderVND: 3000000,
+  expiryMonths: 12,
+  lockDay: 5,
+  minRedeem: 1000,
+  tierBasis: 'points',
+  tiers: [
+    { key: 'member', name: 'Thành viên', threshold: 0, keep: 0, multiplier: 1.0, protectMonths: 0, benefits: ['Tích điểm theo đơn hàng', 'Đổi quà cơ bản'], proposed: true },
+    { key: 'bronze', name: 'Đồng', threshold: 5000, keep: 4000, multiplier: 1.0, protectMonths: 3, benefits: ['Tích điểm theo đơn hàng', 'Quà sinh nhật', 'Ưu tiên tư vấn sản phẩm'] },
+    { key: 'silver', name: 'Bạc', threshold: 10000, keep: 8000, multiplier: 1.0, protectMonths: 3, benefits: ['Hệ số điểm ×1,0', 'Quà sinh nhật', 'Tham gia đào tạo offline'] },
+    { key: 'gold', name: 'Vàng', threshold: 20000, keep: 16000, multiplier: 1.2, protectMonths: 3, benefits: ['Hệ số điểm ×1,2', 'Quà Tết', 'Ưu tiên giao hàng', 'Sale chăm sóc riêng'] },
+    { key: 'diamond', name: 'Kim Cương', threshold: 50000, keep: 40000, multiplier: 1.5, protectMonths: 3, benefits: ['Hệ số điểm ×1,5', 'Du lịch hằng năm', 'Quà Tết cao cấp', 'Mời hội nghị khách hàng'] },
+    { key: 'strategic', name: 'Đối tác chiến lược', threshold: null, keep: null, multiplier: 1.5, protectMonths: 12, benefits: ['Do BOD duyệt', 'Chính sách riêng theo hợp đồng'], special: true },
+  ],
+  rules: [
+    { id: 'R01', group: 'Đơn hàng', name: 'Lên đơn', formula: '100.000đ = 1 điểm × hệ số hạng', when: 'Khi đơn Hoàn tất (treo tới khi thanh toán đủ)', approval: 'Tự động', cap: '—', fund: 'both', status: 'Hiệu lực' },
+    { id: 'R02', group: 'Đơn hàng', name: 'Mốc đơn', formula: 'Đơn ≥ 20 triệu: +200', when: 'Theo đơn', approval: 'Tự động', cap: '—', fund: 'both', status: 'Hiệu lực', points: 200 },
+    { id: 'R03', group: 'Đơn hàng', name: 'Doanh số tháng', formula: 'Đạt 100 triệu/tháng: +1.000', when: 'Job ngày 01', approval: 'Tự động', cap: '1 lần/tháng', fund: 'both', status: 'Hiệu lực', phase: 'GĐ1.5', points: 1000 },
+    { id: 'R04', group: 'Đơn hàng', name: 'Lên đơn đều', formula: '3 tháng liên tiếp có đơn ≥ 30 triệu: +500', when: 'Job ngày 01', approval: 'Tự động', cap: '1 lần/quý', fund: 'both', status: 'Hiệu lực', phase: 'GĐ1.5', points: 500 },
+    { id: 'R05', group: 'Đơn hàng', name: 'SP trọng tâm', formula: 'Hàng mới ×2 trong 2 tháng đầu; campaign ×2 tuỳ đợt', when: 'Theo dòng SP', approval: 'Tự động', cap: '—', fund: 'both', status: 'Hiệu lực' },
+    { id: 'R06', group: 'Thanh toán', name: 'Trả trước hạn', formula: '+100 khi trả trước 10 ngày (G18) ↔ +50/đơn (F7)', when: 'Khi ghi nhận thanh toán', approval: 'Tự động', cap: '—', fund: 'reward', status: 'Nháp', conflict: 'Mâu thuẫn giữa câu G18 và F7 — cần khách chốt' },
+    { id: 'R07', group: 'Hoạt động', name: 'Đào tạo', formula: 'Online 50 / Offline 150; bài test ≥ 80%', when: 'Sau khi đạt bài test', approval: 'Cần duyệt', cap: '—', fund: 'reward', status: 'Hiệu lực', points: 150 },
+    { id: 'R08', group: 'Hoạt động', name: 'Sự kiện', formula: 'Hội nghị khách hàng năm: 300', when: 'Sau sự kiện (điểm danh QR)', approval: 'Cần duyệt', cap: '1 lần/năm', fund: 'reward', status: 'Hiệu lực', points: 300 },
+    { id: 'R09', group: 'Hoạt động', name: 'Đăng bài', formula: '30/bài', when: 'Khi MKT duyệt bằng chứng', approval: 'Marketing duyệt', cap: '300/tháng', fund: 'reward', status: 'Chờ BOD duyệt', phase: 'GĐ2', points: 30 },
+    { id: 'R10', group: 'Hoạt động', name: 'Trưng bày', formula: '200/tháng khi đạt chuẩn', when: 'Khi duyệt ảnh trưng bày', approval: 'Cần duyệt', cap: '200/tháng', fund: 'reward', status: 'Hiệu lực', phase: 'GĐ2', points: 200 },
+    { id: 'R11', group: 'Hoạt động', name: 'Khảo sát', formula: '20/tháng', when: 'Hoàn thành khảo sát', approval: 'Tự động', cap: '20/tháng', fund: 'reward', status: 'Hiệu lực', points: 20 },
+    { id: 'R12', group: 'Phát triển', name: 'Giới thiệu đại lý', formula: '500 khi đại lý mới có đơn đầu ≥ 10 triệu', when: 'Đơn đầu của đại lý được giới thiệu', approval: 'Tự động', cap: '—', fund: 'reward', status: 'Hiệu lực', points: 500 },
+    { id: 'R13', group: 'Phát triển', name: 'Mở điểm bán', formula: '150/điểm', when: 'Khi duyệt điểm bán mới', approval: 'Cần duyệt', cap: '—', fund: 'reward', status: 'Hiệu lực', points: 150 },
+    { id: 'R14', group: 'Chu kỳ', name: 'KPI năm', formula: 'Vượt KPI năm: +5.000', when: 'Cuối năm', approval: 'Cần duyệt', cap: '1 lần/năm', fund: 'both', status: 'Hiệu lực', phase: 'GĐ2', points: 5000 },
+    { id: 'R15', group: 'Gắn kết', name: 'Sinh nhật / thâm niên', formula: '+200 sinh nhật / +500 mỗi năm hợp tác', when: 'Đúng ngày', approval: 'Tự động', cap: '—', fund: 'reward', status: 'Hiệu lực', points: 200 },
+    { id: 'R16', group: 'Trừ điểm', name: 'Phá giá / bán sai địa bàn', formula: '−1.000 + cảnh cáo; tái phạm cắt hạng', when: 'Khi có vi phạm', approval: 'KTT đề xuất, BOD duyệt', cap: '—', fund: 'reward', status: 'Hiệu lực', phase: 'GĐ2', points: -1000 },
+    { id: 'R17', group: 'Trừ điểm', name: 'Bán trên sàn TMĐT trái phép', formula: '−2.000 lần đầu', when: 'Khi có vi phạm', approval: 'KTT đề xuất, BOD duyệt', cap: '—', fund: 'reward', status: 'Hiệu lực', phase: 'GĐ2', points: -2000 },
+  ],
+};

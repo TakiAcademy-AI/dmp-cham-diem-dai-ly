@@ -1,0 +1,28 @@
+.w13-tabs { overflow-x: auto; }
+.w13-table .dmp-table td { white-space: nowrap; }
+.w13-wrap { white-space: normal; min-width: 160px; }
+.w13-reason { max-width: 200px; min-width: 140px; white-space: normal; font-size: 13px; color: var(--ink-muted); }
+.w13-who { white-space: normal; max-width: 150px; }
+.w13-att { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; color: var(--primary); font-weight: 600; }
+.w13-self { font-size: 12px; color: var(--warning); font-weight: 600; white-space: normal; max-width: 160px; display: block; }
+.w13-done { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.w13-done li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.w13-donebtn { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.w13-donebtn:focus-visible { outline: 2px solid var(--focus-ring); border-radius: var(--radius-sm); }
+.w13-vhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+@container shell (max-width: 640px) {
+  .w13-reason, .w13-who, .w13-wrap { max-width: none; min-width: 0; }
+  .w13-table .dmp-table td { white-space: normal; }
+  .w13-act .dmp-btn { min-height: 44px; }
+}
+.w13-sec { display: flex; flex-direction: column; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.w13-mt { margin-top: 4px; align-self: flex-start; }
+.w13-break { word-break: break-all; }
+.w13-diff { width: 100%; border-collapse: collapse; font-size: 14px; }
+.w13-diff th, .w13-diff td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.w13-diff th { color: var(--ink-muted); font-weight: 600; font-size: 13px; }
+.w13-diff td.is-old { color: var(--ink-muted); text-decoration: line-through; }
+.w13-diff td.is-new { color: var(--primary); font-weight: 600; }
+.w13-photos { display: flex; flex-wrap: wrap; gap: 8px; }
+.w13-photo { width: 96px; height: 96px; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface-muted); display: flex; align-items: center; justify-content: center; overflow: hidden; color: var(--primary); }
+.w13-photo img { width: 100%; height: 100%; object-fit: cover; }

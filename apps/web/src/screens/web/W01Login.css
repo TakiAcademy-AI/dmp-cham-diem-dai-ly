@@ -1,0 +1,15 @@
+.login { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; min-height: 100dvh; background: var(--surface); }
+.login__brand { background: var(--primary); color: var(--on-fill); padding: 56px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+.login__brand h1 { margin: 0; font-size: 44px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+.login__brand p { margin: 12px 0 0; font-size: 17px; line-height: 26px; max-width: 380px; }
+.login__brand ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 15px; }
+.login__brand li { display: flex; gap: 10px; align-items: center; }
+.login__foot { font-size: 13px; }
+.login__panel { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; padding: 40px 16px; }
+.login__form { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 18px; }
+.login__form h2 { margin: 0; font-size: 24px; line-height: 32px; font-weight: 700; }
+.login__form p { margin: 0; font-size: 15px; color: var(--ink-muted); }
+.login__row { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.login__row label { display: flex; gap: 8px; align-items: center; }
+.login__demo { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+@media (max-width: 800px) { .login { grid-template-columns: 1fr; } .login__brand { display: none; } }

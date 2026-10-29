@@ -1,0 +1,15 @@
+.m16-tabs { overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; }
+.m16-tabs::-webkit-scrollbar { display: none; }
+.m16-tabs > * { width: max-content; }
+.m16-sub { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.m16-tip { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 10px 12px; border: 0; border-radius: var(--radius-lg); background: var(--primary-soft); color: var(--primary); font: inherit; font-size: 15px; line-height: 21px; text-align: left; cursor: pointer; }
+.m16-tip span { flex: 1; color: var(--ink); }
+.m16-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.m16-doc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+.m16-doc__img { aspect-ratio: 4 / 3; background: var(--surface-muted); display: grid; place-items: center; color: var(--ink-muted); position: relative; }
+.m16-doc.is-locked .m16-doc__img { color: var(--line-strong); }
+.m16-doc__tag { position: absolute; top: 6px; left: 6px; }
+.m16-doc__b { padding: 10px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.m16-doc__b b { font-size: 15px; line-height: 21px; }
+.m16-doc__b .dmp-btn { margin-top: auto; font-size: 15px; padding: 0 8px; }
+.m16-doc__b .m16-sub { margin-bottom: 6px; }

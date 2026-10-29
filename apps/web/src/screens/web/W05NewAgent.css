@@ -1,0 +1,27 @@
+.w05-steps { padding: 4px 0 16px; }
+.w05-form3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 20px; }
+.w05-form3 .dmp-field { width: auto; }
+.w05-drops { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.w05-drop { border: 2px dashed var(--line-strong); border-radius: var(--radius-lg); padding: 18px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; font: inherit; font-size: 14px; color: var(--ink-muted); background: var(--surface-muted); min-height: 120px; justify-content: center; cursor: pointer; }
+.w05-drop b { color: var(--ink); }
+.w05-drop.is-done { border-style: solid; border-color: var(--success); background: var(--success-soft); color: var(--success); }
+.w05-policy { display: flex; flex-direction: column; gap: 4px; font-size: 14px; padding: 10px 12px; border-radius: var(--radius-md); background: var(--surface-muted); align-self: end; }
+.w05-foot { margin-top: 20px; }
+
+.w05-review { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+.w05-sel { color: var(--primary); }
+.w05-gap { height: 16px; }
+.w05-mt { margin-top: 12px; }
+.w05-doclist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.w05-docimg { aspect-ratio: 3 / 2; border-radius: var(--radius-md); background: var(--surface-muted); border: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 13px; color: var(--ink-muted); text-align: center; padding: 4px; }
+.w05-code { font-size: 28px; font-weight: 700; letter-spacing: .02em; color: var(--primary); margin-bottom: 4px; }
+
+@container shell (max-width: 900px) { .w05-review { grid-template-columns: minmax(0, 1fr); } .w05-drops { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container shell (max-width: 640px) { .w05-form3 { grid-template-columns: minmax(0, 1fr); } .w05-drops { grid-template-columns: minmax(0, 1fr); } }
+div.w05-drop { cursor: default; }
+.w05-thumb { width: 100%; max-width: 160px; height: 72px; object-fit: cover; border-radius: var(--radius-sm); }
+.w05-fname { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.w05-dropact { justify-content: center; margin-top: 4px; }
+.w05-docimg--file { text-decoration: none; color: var(--ink); overflow: hidden; }
+.w05-docimg--file:hover span { color: var(--primary); text-decoration: underline; }
+.w05-docthumb { width: 100%; height: calc(100% - 22px); object-fit: cover; border-radius: var(--radius-sm); min-height: 0; }

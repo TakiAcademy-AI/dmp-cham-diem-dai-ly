@@ -1,0 +1,15 @@
+.w06-sp { width: 12px; }
+.w06-detail { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: start; }
+.w06-table .dmp-table { min-width: 1080px; }
+.w06-table .dmp-table td { white-space: nowrap; }
+.w06-table .dmp-table td.is-primary { white-space: normal; min-width: 220px; }
+.w06-sel { color: var(--primary); }
+.w06-pct { display: inline-flex; align-items: center; }
+.w06-bar { width: 90px; height: 8px; border-radius: 4px; background: var(--surface-muted); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; display: inline-block; margin-right: 8px; }
+.w06-bar > i { display: block; height: 100%; background: var(--primary); }
+.w06-bad { color: var(--danger); }
+.w06-mid { color: var(--warning); }
+.w06-ok { color: var(--ink); }
+
+@container shell (max-width: 900px) { .w06-detail { grid-template-columns: minmax(0, 1fr); } }
+@container shell (max-width: 640px) { .w06-table .dmp-table-scroll { max-height: none !important; } .w06-table .dmp-table { min-width: 0; } .w06-table .dmp-table td { white-space: normal; } }

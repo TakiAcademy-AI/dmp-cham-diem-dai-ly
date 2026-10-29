@@ -1,0 +1,5 @@
+.w24-filters { margin-bottom: 16px; }
+.w24-table .dmp-table td { white-space: nowrap; }
+.w24-diff { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.w24-old { color: var(--danger); text-decoration: line-through; }
+.w24-new { color: var(--success); font-weight: 600; }
